@@ -1,17 +1,14 @@
-import CustomLink from "./CustomLink";
+import Nav from "./Nav";
+import "./Header.css";
 
 function Header() {
   return (
     <div className="Header">
       <header className="logo">
-        <h1>Bicycle</h1>
-        <h2>Bike your way through hte world</h2>
+        <h1 className="bigger text-shadow">Bicycle</h1>
+        <h2 className="big text-shadow">Bike your way through the world</h2>
       </header>
-      <nav className="navBar">
-        <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/shop">Shop</CustomLink>
-        <CustomLink to="/cart">Cart</CustomLink>
-      </nav>
+      <Nav />
     </div>
   );
 }
