@@ -5,4 +5,30 @@
 
 .App {
   font-family: margarine;
+  margin: auto;
+  max-width: 1300px;
+}
+
+.bigger {
+  font-size: 96px;
+  font-weight: bold;
+}
+
+.big {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.medium {
+  font-size: 32px;
+  font-weight: regular;
+}
+
+.small {
+  font-size: 24px;
+  font-weight: regular;
+}
+
+.text-shadow {
+  text-shadow: 0px 1px 3px hsl(0, 0%, 30%);
 }
