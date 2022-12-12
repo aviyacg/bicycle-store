@@ -1,0 +1,13 @@
+.Nav {
+  display: flex;
+  justify-content: space-evenly;
+
+  box-shadow: 0px -4px 10px 0px #00000040;
+
+  background: linear-gradient(
+      89.64deg,
+      rgba(249, 237, 215, 0.2) 50.34%,
+      rgba(252, 240, 224, 0.2) 83.56%
+    ),
+    linear-gradient(269.03deg, #faf1e0 54.5%, #f3e4c5 68.12%);
+}
