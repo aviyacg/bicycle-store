@@ -1,0 +1,16 @@
+.InfoCard {
+  width: 287px;
+  height: 584px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.InfoCard > img {
+  border-radius: 50%;
+}
+
+.InfoCard > div {
+  text-align: center;
+}
