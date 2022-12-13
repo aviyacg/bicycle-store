@@ -4,6 +4,7 @@ header {
 
   height: 484px;
   width: 1300px;
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
