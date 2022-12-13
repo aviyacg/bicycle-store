@@ -1,0 +1,15 @@
+.Shop {
+  width: 1300px;
+  padding: 16px;
+
+  background-image: url("../assets/images/brick-background.jpg");
+  background-size: 30%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, auto);
+
+  justify-content: center;
+  align-items: center;
+}
