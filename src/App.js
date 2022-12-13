@@ -20,7 +20,7 @@ function App() {
     } else {
       setCart({
         [item.name]: {
-          item: { name: item.name, price: item.price },
+          item,
           quantity: 1,
         },
         ...cart,
