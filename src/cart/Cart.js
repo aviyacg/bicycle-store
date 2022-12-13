@@ -8,6 +8,8 @@ function Cart({ cart, addItem, removeItem }) {
       key={index}
       item={cart[name].item}
       quantity={cart[name].quantity}
+      addItem={addItem}
+      removeItem={removeItem}
     />
   ));
 
@@ -27,7 +29,7 @@ function Cart({ cart, addItem, removeItem }) {
         )}
         <div className="Total">
           <div className="medium">Total:</div>
-          <div className="medium">{total}</div>
+          <div className="medium">{total}$</div>
         </div>
       </div>
     </div>
