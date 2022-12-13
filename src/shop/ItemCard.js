@@ -1,6 +1,6 @@
 import "./ItemCard.css";
 
-function ItemCard({ item }) {
+function ItemCard({ item, addItem }) {
   const { name, image, description, price } = item;
   return (
     <div className="ItemCard">
@@ -9,7 +9,9 @@ function ItemCard({ item }) {
       <div className="small">{description}</div>
       <div className="bottom">
         <div className="small">{price}$</div>
-        <button className="small">add to cart</button>
+        <button className="small" onClick={() => addItem(item)}>
+          add to cart
+        </button>
       </div>
     </div>
   );

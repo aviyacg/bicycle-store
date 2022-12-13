@@ -2,9 +2,9 @@ import ItemCard from "./ItemCard";
 
 import "./Shop.css";
 
-function Shop({ itemList }) {
+function Shop({ itemList, addItem }) {
   const itemCardList = itemList.map((item, index) => (
-    <ItemCard key={index} item={item} />
+    <ItemCard key={index} item={item} addItem={addItem} />
   ));
   return (
     <div className="Shop">
