@@ -16,7 +16,6 @@ function App() {
     if (prevItem) {
       prevItem.quantity = prevItem.quantity + 1;
       setCart({ [item.name]: prevItem, ...cart });
-      console.log("add 1 more item", item);
     } else {
       setCart({
         [item.name]: {
@@ -25,7 +24,6 @@ function App() {
         },
         ...cart,
       });
-      console.log("add new item", { item });
     }
   };
 
@@ -37,8 +35,9 @@ function App() {
         setCart({ [item.name]: prevItem, ...cart });
       } else {
         const prevCart = cart;
+        console.log({ prevCart });
         delete prevCart[item.name];
-        setCart(prevCart);
+        setCart({ ...prevCart });
       }
     }
   };
