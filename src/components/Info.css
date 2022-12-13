@@ -1,0 +1,10 @@
+.Info {
+  display: flex;
+  gap: 8px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  background-color: hsl(357, 79%, 80%);
+  padding: 8px;
+}

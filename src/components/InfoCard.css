@@ -1,13 +1,16 @@
 .InfoCard {
   width: 287px;
-  height: 584px;
+  padding: 4px;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 .InfoCard > img {
+  max-width: 287px;
+  transform: scale(0.9);
   border-radius: 50%;
 }
 
