@@ -7,22 +7,26 @@
   font-family: margarine;
   margin: auto;
   max-width: 1300px;
-  box-shadow: 0px -4px 10px 0px #00000040;
+  box-shadow: 0px 0px 10px 0px #00000040;
 }
 
 .bigger {
+  font-family: margarine;
   font-size: 96px;
 }
 
 .big {
+  font-family: margarine;
   font-size: 48px;
 }
 
 .medium {
+  font-family: margarine;
   font-size: 32px;
 }
 
 .small {
+  font-family: margarine;
   font-size: 24px;
 }
 
