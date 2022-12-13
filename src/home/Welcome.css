@@ -1,0 +1,17 @@
+.Welcome {
+  width: 1300px;
+  height: 800px;
+
+  background-image: url("../assets/images/welcome-background.jpg");
+  background-size: 100%;
+  background-position: revert;
+}
+
+.Welcome > h2 {
+  position: relative;
+  left: 10%;
+  top: 3.5%;
+
+  width: fit-content;
+  text-align: center;
+}
