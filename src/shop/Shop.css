@@ -1,6 +1,6 @@
 .Shop {
   width: 1300px;
-  padding: 16px;
+  padding: 64px;
 
   background-image: url("../assets/images/brick-background.jpg");
   background-size: 30%;
@@ -8,8 +8,13 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, auto);
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 64px;
 
   justify-content: center;
   align-items: center;
+}
+
+.ItemCard {
+  justify-self: center;
 }
