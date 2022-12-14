@@ -2,6 +2,8 @@ import Info from "../components/Info";
 import ItemCard from "./ItemCard";
 
 import moneyBike from "../assets/images/money-bike.jpg";
+import successBike from "../assets/images/success-bike.jpg";
+import deliveryBike from "../assets/images/delivery-bike.jpg";
 import "./Shop.css";
 
 function Shop({ itemList, addItem }) {
@@ -10,19 +12,19 @@ function Shop({ itemList, addItem }) {
   ));
   const infoList = [
     {
-      title: "Get a bike today!",
-      image: moneyBike,
-      text: "save some cash and ride back home",
+      title: "Successful pepole ride Bike!",
+      image: successBike,
+      text: "Bill Gates, Steve Jobs, Elon Musk and list goes on... Join them with your own new bike today",
     },
     {
-      title: "Get a bike today!",
+      title: "Rich pepole ride Bike!",
       image: moneyBike,
-      text: "save some cash and ride back home",
+      text: "save some gas cash and ride back home on your own new bike",
     },
     {
-      title: "Get a bike today!",
-      image: moneyBike,
-      text: "save some cash and ride back home",
+      title: "Delivery persons disscount!",
+      image: deliveryBike,
+      text: "To show our support we give 10% disscount to delivery persons",
     },
   ];
   return (

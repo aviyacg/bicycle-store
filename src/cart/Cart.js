@@ -1,7 +1,9 @@
 import CartItem from "./CartItem";
 import Info from "../components/Info";
 
-import moneyBike from "../assets/images/money-bike.jpg";
+import surfBike from "../assets/images/surf-bike.jpg";
+import candyBike from "../assets/images/candy-bike.jpg";
+import gayBike from "../assets/images/gay-bike.jpg";
 import "./Cart.css";
 
 function Cart({ cart, addItem, removeItem }) {
@@ -25,19 +27,19 @@ function Cart({ cart, addItem, removeItem }) {
 
   const infoList = [
     {
-      title: "Get a bike today!",
-      image: moneyBike,
-      text: "save some cash and ride back home",
+      title: "Your kid is sugar hyped?",
+      image: candyBike,
+      text: "just get them a bike to blow off some steam",
     },
     {
-      title: "Get a bike today!",
-      image: moneyBike,
-      text: "save some cash and ride back home",
+      title: "Ride your Bike with pride!",
+      image: gayBike,
+      text: "We support LGBTQ as well as straight people",
     },
     {
-      title: "Get a bike today!",
-      image: moneyBike,
-      text: "save some cash and ride back home",
+      title: "Still thinking? go surffing!",
+      image: surfBike,
+      text: "It's a sunny day somewhere on the planet",
     },
   ];
 
