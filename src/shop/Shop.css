@@ -18,3 +18,12 @@
 .ItemCard {
   justify-self: center;
 }
+
+.Shop + .Info {
+  background: linear-gradient(
+    90deg,
+    #fee1e6 0%,
+    #fdeeeb 57.81%,
+    #ffcdcc 90.78%
+  );
+}

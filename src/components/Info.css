@@ -5,6 +5,11 @@
   align-items: center;
   flex-wrap: wrap;
 
-  background-color: hsl(357, 79%, 80%);
-  padding: 8px;
+  background: linear-gradient(
+    90deg,
+    #fbebdc 0%,
+    #f2c9b7 57.81%,
+    #f3dec2 90.78%
+  );
+  padding: 32px;
 }

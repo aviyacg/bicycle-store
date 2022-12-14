@@ -39,3 +39,12 @@
 
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
+
+.Cart + .Info {
+  background: linear-gradient(
+    90deg,
+    #fee1e6 0%,
+    #fdeeeb 57.81%,
+    #ffcdcc 90.78%
+  );
+}
