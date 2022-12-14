@@ -5,6 +5,10 @@
   border: none;
 }
 
+body {
+  background-image: url("./assets/images/logo-background.jpg");
+}
+
 button {
   cursor: pointer;
 }
