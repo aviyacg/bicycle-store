@@ -3,16 +3,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   padding: 16px;
 
-  width: 400px;
   background-color: rgba(201, 201, 201, 0.92);
 }
 
 .ItemCard > img {
-  max-width: 400px;
-  transform: scale(0.9);
+  max-width: 90%;
 }
 
 .ItemCard > div {
@@ -20,7 +18,7 @@
 }
 
 .bottom {
-  width: 350px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,4 +32,9 @@
 .bottom > button:hover {
   background-color: hsl(0, 0%, 90%);
   box-shadow: 0px 0px 5px 0px #00000040;
+}
+
+.add-item {
+  transform: scale(1.01);
+  color: green;
 }

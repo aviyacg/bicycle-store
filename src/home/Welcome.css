@@ -1,6 +1,5 @@
 .Welcome {
-  width: 1300px;
-  height: 800px;
+  height: calc((800 / 1300) * var(--app-width));
 
   background-image: url("../assets/images/welcome-background.jpg");
   background-size: 100%;
