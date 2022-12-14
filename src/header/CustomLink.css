@@ -5,8 +5,7 @@ a {
   align-items: center;
   text-decoration: none;
 
-  width: 214px;
-  height: 59px;
+  padding: 0.5rem 2rem;
   border-bottom: 2px solid #b2151c;
 }
 

@@ -1,5 +1,5 @@
 .InfoCard {
-  width: 287px;
+  width: 25%;
   padding: 4px;
 
   display: flex;
@@ -10,8 +10,7 @@
 }
 
 .InfoCard > img {
-  max-width: 287px;
-  transform: scale(0.9);
+  max-width: 90%;
   border-radius: 50%;
 }
 
