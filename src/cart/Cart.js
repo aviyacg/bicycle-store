@@ -3,15 +3,17 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 
 function Cart({ cart, addItem, removeItem }) {
-  const itemList = Object.keys(cart).map((name, index) => (
-    <CartItem
-      key={index}
-      item={cart[name].item}
-      quantity={cart[name].quantity}
-      addItem={addItem}
-      removeItem={removeItem}
-    />
-  ));
+  const itemList = Object.keys(cart)
+    .sort()
+    .map((name) => (
+      <CartItem
+        key={name}
+        item={cart[name].item}
+        quantity={cart[name].quantity}
+        addItem={addItem}
+        removeItem={removeItem}
+      />
+    ));
 
   const total = Object.keys(cart).reduce((sum, name) => {
     const itemPrice = cart[name].item.price;
