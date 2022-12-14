@@ -27,3 +27,9 @@
     #ffcdcc 90.78%
   );
 }
+
+.Header:has(~ .Shop) > header {
+  background-image: url("../assets/images/beach-biking.jpg");
+  justify-content: flex-start;
+  gap: 24px;
+}

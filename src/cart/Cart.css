@@ -48,3 +48,9 @@
     #ffcdcc 90.78%
   );
 }
+
+.Header:has(~ .Cart) > header {
+  background-image: url("../assets/images/sunset-biking.jpg");
+  justify-content: flex-start;
+  gap: 24px;
+}
