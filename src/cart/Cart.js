@@ -1,5 +1,7 @@
 import CartItem from "./CartItem";
+import Info from "../components/Info";
 
+import moneyBike from "../assets/images/money-bike.jpg";
 import "./Cart.css";
 
 function Cart({ cart, addItem, removeItem }) {
@@ -21,20 +23,43 @@ function Cart({ cart, addItem, removeItem }) {
     return sum + itemPrice * quantity;
   }, 0);
 
+  const infoList = [
+    {
+      title: "Get a bike today!",
+      image: moneyBike,
+      text: "save some cash and ride back home",
+    },
+    {
+      title: "Get a bike today!",
+      image: moneyBike,
+      text: "save some cash and ride back home",
+    },
+    {
+      title: "Get a bike today!",
+      image: moneyBike,
+      text: "save some cash and ride back home",
+    },
+  ];
+
   return (
-    <div className="Cart">
-      <div className="CartTable">
-        {itemList.length > 0 ? (
-          itemList
-        ) : (
-          <div className="medium empty-cart-messenger">your cart is empty</div>
-        )}
-        <div className="Total">
-          <div className="medium">Total:</div>
-          <div className="medium">{total}$</div>
+    <>
+      <div className="Cart">
+        <div className="CartTable">
+          {itemList.length > 0 ? (
+            itemList
+          ) : (
+            <div className="medium empty-cart-messenger">
+              your cart is empty
+            </div>
+          )}
+          <div className="Total">
+            <div className="medium">Total:</div>
+            <div className="medium">{total}$</div>
+          </div>
         </div>
       </div>
-    </div>
+      <Info infoList={infoList} />
+    </>
   );
 }
 
