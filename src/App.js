@@ -110,6 +110,12 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      <footer>
+        <a href="https://www.freepik.com/free-vector/various-models-styles-bikes-riders-choose-from-according-age-usage-vector-cartoon-illustration-bicycle-isolated-white-background_24023071.htm#&position=4&from_view=collections">
+          Images by jcomp
+        </a>{" "}
+        on Freepik
+      </footer>
     </div>
   );
 }
