@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.a9419108.css",
+    "main.js": "/react-gh-pages/static/js/main.2eb995c1.js",
+    "static/media/beach-biking.jpg": "/react-gh-pages/static/media/beach-biking.c4c787e9e047fdbd3bed.jpg",
+    "static/media/candy-bike.jpg": "/react-gh-pages/static/media/candy-bike.7dd292ee6d826c19a6e2.jpg",
+    "static/media/logo-background.jpg": "/react-gh-pages/static/media/logo-background.fe4b55b11ed63acc52f7.jpg",
+    "static/media/sunset-biking.jpg": "/react-gh-pages/static/media/sunset-biking.0d39d26f97c057363a18.jpg",
+    "static/media/health-bike.jpg": "/react-gh-pages/static/media/health-bike.47c67b833be801c5e00d.jpg",
+    "static/media/welcome-background.jpg": "/react-gh-pages/static/media/welcome-background.f99ee3ab62205cf0098b.jpg",
+    "static/media/money-bike.jpg": "/react-gh-pages/static/media/money-bike.1a1172d2a514037308fc.jpg",
+    "static/media/gay-bike.jpg": "/react-gh-pages/static/media/gay-bike.7f5b2baf39466a409a64.jpg",
+    "static/media/music-bike.jpg": "/react-gh-pages/static/media/music-bike.ca3ad0c2048d33e5203d.jpg",
+    "static/media/success-bike.jpg": "/react-gh-pages/static/media/success-bike.d60b3a1b7d7e3e9324fc.jpg",
+    "static/media/nasa-bike.jpg": "/react-gh-pages/static/media/nasa-bike.0ae09221ca356fda0313.jpg",
+    "static/media/delivery-bike.jpg": "/react-gh-pages/static/media/delivery-bike.51e09ec62562bfb03d9a.jpg",
+    "static/media/surf-bike.jpg": "/react-gh-pages/static/media/surf-bike.1f56dd97c5fd4390cd1a.jpg",
+    "static/media/brick-background.jpg": "/react-gh-pages/static/media/brick-background.dfef0c586a9d5ba7dc41.jpg",
+    "static/media/blue-bike.jpg": "/react-gh-pages/static/media/blue-bike.651f1c66bb44d6845a9e.jpg",
+    "static/media/red-bike.jpg": "/react-gh-pages/static/media/red-bike.9af5b368c38bae8963ea.jpg",
+    "static/media/orange-bike.jpg": "/react-gh-pages/static/media/orange-bike.b58cb29d5e6f7614cec5.jpg",
+    "static/media/turquoise-bike.jpg": "/react-gh-pages/static/media/turquoise-bike.8fb488d14f6b02450851.jpg",
+    "static/media/Margarine-Regular.ttf": "/react-gh-pages/static/media/Margarine-Regular.1aa21878ec7292c8ea2d.ttf",
+    "static/media/green-bike.jpg": "/react-gh-pages/static/media/green-bike.c47f2594d9f76ad0ade9.jpg",
+    "static/media/purple-bike.jpg": "/react-gh-pages/static/media/purple-bike.1f5b7722f027cd593c7c.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.a9419108.css.map": "/react-gh-pages/static/css/main.a9419108.css.map",
+    "main.2eb995c1.js.map": "/react-gh-pages/static/js/main.2eb995c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9419108.css",
+    "static/js/main.2eb995c1.js"
+  ]
+}
