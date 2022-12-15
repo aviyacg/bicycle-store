@@ -10,7 +10,11 @@
 }
 
 .GoShopping > a {
-  border: none;
+  color: hsl(0, 0%, 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   padding: 1rem;
 }
 
