@@ -4,6 +4,7 @@ import Info from "../components/Info";
 import healthBike from "../assets/images/health-bike.jpg";
 import musicBike from "../assets/images/music-bike.jpg";
 import nasaBike from "../assets/images/nasa-bike.jpg";
+import GoShopping from "../components/GoShopping";
 
 function Home() {
   const infoList = [
@@ -27,6 +28,7 @@ function Home() {
     <div className="Home">
       <Welcome />
       <Info infoList={infoList} />
+      <GoShopping />
     </div>
   );
 }

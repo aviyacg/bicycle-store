@@ -5,6 +5,7 @@ import surfBike from "../assets/images/surf-bike.jpg";
 import candyBike from "../assets/images/candy-bike.jpg";
 import gayBike from "../assets/images/gay-bike.jpg";
 import "./Cart.css";
+import GoShopping from "../components/GoShopping";
 
 function Cart({ cart, addItem, removeItem }) {
   const itemList = Object.keys(cart)
@@ -61,6 +62,7 @@ function Cart({ cart, addItem, removeItem }) {
         </div>
       </div>
       <Info infoList={infoList} />
+      <GoShopping text="Back to shop" />
     </>
   );
 }
