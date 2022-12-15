@@ -5,8 +5,9 @@ import moneyBike from "../assets/images/money-bike.jpg";
 import successBike from "../assets/images/success-bike.jpg";
 import deliveryBike from "../assets/images/delivery-bike.jpg";
 import "./Shop.css";
+import GoToCart from "../components/GoToCart";
 
-function Shop({ itemList, addItem }) {
+function Shop({ itemList, itemCount, addItem }) {
   const itemCardList = itemList.map((item, index) => (
     <ItemCard key={index} item={item} addItem={addItem} />
   ));
@@ -33,6 +34,7 @@ function Shop({ itemList, addItem }) {
         <div className="gallery">{itemCardList}</div>
       </div>
       <Info infoList={infoList} />
+      <GoToCart itemCount={itemCount} />
     </>
   );
 }

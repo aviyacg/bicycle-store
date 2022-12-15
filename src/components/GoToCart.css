@@ -1,0 +1,23 @@
+.GoToCart {
+  position: fixed;
+  top: 90%;
+  right: 0;
+
+  background-color: rgba(201, 201, 201, 0.92);
+  height: 10%;
+  font-weight: bold;
+}
+
+.GoToCart > a {
+  color: hsl(0, 0%, 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.GoToCart > a:hover {
+  background-color: hsla(0, 0%, 98%, 0.3);
+  text-shadow: 0px 4px 4px hsla(0, 0%, 100%);
+}

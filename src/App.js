@@ -11,10 +11,20 @@ import greenBike from "./assets/images/green-bike.jpg";
 import purpleBike from "./assets/images/purple-bike.jpg";
 import orangeBike from "./assets/images/orange-bike.jpg";
 import turquoiseBike from "./assets/images/turquoise-bike.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState({});
+
+  const [itemCount, setItemCount] = useState(0);
+
+  useEffect(() => {
+    const count = Object.keys(cart).reduce((sum, name) => {
+      const quantity = cart[name].quantity;
+      return sum + quantity;
+    }, 0);
+    setItemCount(count);
+  }, [cart]);
 
   const addItem = (item) => {
     const prevItem = cart[item.name];
@@ -100,7 +110,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/shop"
-            element={<Shop itemList={itemList} addItem={addItem} />}
+            element={
+              <Shop
+                itemList={itemList}
+                itemCount={itemCount}
+                addItem={addItem}
+              />
+            }
           />
           <Route
             path="/cart"
