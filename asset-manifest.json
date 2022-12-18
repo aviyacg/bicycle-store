@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-gh-pages/static/css/main.a9419108.css",
-    "main.js": "/react-gh-pages/static/js/main.2eb995c1.js",
+    "main.js": "/react-gh-pages/static/js/main.86f455ae.js",
     "static/media/beach-biking.jpg": "/react-gh-pages/static/media/beach-biking.c4c787e9e047fdbd3bed.jpg",
     "static/media/candy-bike.jpg": "/react-gh-pages/static/media/candy-bike.7dd292ee6d826c19a6e2.jpg",
     "static/media/logo-background.jpg": "/react-gh-pages/static/media/logo-background.fe4b55b11ed63acc52f7.jpg",
@@ -25,10 +25,10 @@
     "static/media/purple-bike.jpg": "/react-gh-pages/static/media/purple-bike.1f5b7722f027cd593c7c.jpg",
     "index.html": "/react-gh-pages/index.html",
     "main.a9419108.css.map": "/react-gh-pages/static/css/main.a9419108.css.map",
-    "main.2eb995c1.js.map": "/react-gh-pages/static/js/main.2eb995c1.js.map"
+    "main.86f455ae.js.map": "/react-gh-pages/static/js/main.86f455ae.js.map"
   },
   "entrypoints": [
     "static/css/main.a9419108.css",
-    "static/js/main.2eb995c1.js"
+    "static/js/main.86f455ae.js"
   ]
 }
