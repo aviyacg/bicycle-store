@@ -12,6 +12,7 @@ import purpleBike from "./assets/images/purple-bike.jpg";
 import orangeBike from "./assets/images/orange-bike.jpg";
 import turquoiseBike from "./assets/images/turquoise-bike.jpg";
 import { useEffect, useState } from "react";
+import { writeItemToDB } from "./firestoreUtils";
 
 function App() {
   const [cart, setCart] = useState({});
@@ -31,6 +32,7 @@ function App() {
     if (prevItem) {
       prevItem.quantity = prevItem.quantity + 1;
       setCart({ [item.name]: prevItem, ...cart });
+      writeItemToDB(item, prevItem.quantity);
     } else {
       setCart({
         [item.name]: {
@@ -39,6 +41,7 @@ function App() {
         },
         ...cart,
       });
+      writeItemToDB(item, 1);
     }
   };
 
