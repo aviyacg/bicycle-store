@@ -12,10 +12,19 @@ import purpleBike from "./assets/images/purple-bike.jpg";
 import orangeBike from "./assets/images/orange-bike.jpg";
 import turquoiseBike from "./assets/images/turquoise-bike.jpg";
 import { useEffect, useState } from "react";
-import { writeItemToDB } from "./firestoreUtils";
+import { loadCartFromDB, writeItemToDB } from "./firestoreUtils";
 
 function App() {
   const [cart, setCart] = useState({});
+
+  // load cart from DB
+  const loadDBcart = async () => {
+    const dbCart = await loadCartFromDB();
+    setCart(dbCart);
+  };
+  useEffect(() => {
+    loadDBcart();
+  }, []);
 
   const [itemCount, setItemCount] = useState(0);
 

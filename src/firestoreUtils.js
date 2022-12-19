@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  setDoc,
+  doc,
+} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,4 +30,24 @@ async function writeItemToDB(item, quantity) {
   await setDoc(doc(db, "cart", item.name), { ...item, quantity });
 }
 
-export { writeItemToDB };
+async function loadCartFromDB() {
+  try {
+    const cart = {};
+
+    const querySnapshot = await getDocs(collection(db, "cart"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const { name, description, image, price, quantity } = data;
+      cart[name] = {
+        item: { name, description, image, price },
+        quantity,
+      };
+    });
+    console.log(cart);
+    return cart;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export { writeItemToDB, loadCartFromDB };
