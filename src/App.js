@@ -12,7 +12,8 @@ import purpleBike from "./assets/images/purple-bike.jpg";
 import orangeBike from "./assets/images/orange-bike.jpg";
 import turquoiseBike from "./assets/images/turquoise-bike.jpg";
 import { useEffect, useState } from "react";
-import { loadCartFromDB, writeItemToDB } from "./firestoreUtils";
+import { loadCartFromDB, writeItemToDB } from "./firebase/firestore";
+import Login from "./login/Login";
 
 function App() {
   const [cart, setCart] = useState({});
@@ -118,6 +119,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+        <Login />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
