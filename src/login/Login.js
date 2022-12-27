@@ -1,5 +1,5 @@
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   auth,
   googleSignIn,
@@ -9,12 +9,19 @@ import {
   logout,
 } from "../firebase/auth";
 import "./Login.css";
+import { getUserName } from "../firebase/firestore";
+import avatar from "./avatar.png";
 function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const [register, setRegister] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    getUserName(user?.uid).then((res) => setUsername(res));
+  }, [user]);
 
   const clearInputs = () => {
     setEmail("");
@@ -31,8 +38,8 @@ function Login() {
   if (user) {
     return (
       <div className="login-user small">
-        {user.displayName}
-        <img src={user.photoURL} alt="profile" />
+        {username}
+        <img src={avatar} alt="profile" />
         <div className="menu">
           <button
             className="login-logout small"

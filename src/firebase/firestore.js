@@ -29,6 +29,12 @@ async function addUser(user, provider) {
   });
 }
 
+async function getUserName(uid) {
+  const q = query(collection(db, "users"), where("uid", "==", uid));
+  const docs = await getDocs(q);
+  return docs.docs[0]?.get("name");
+}
+
 // cart management
 async function writeItemToDB(item, quantity) {
   await setDoc(doc(db, "cart", item.name), { ...item, quantity });
@@ -53,5 +59,5 @@ async function loadCartFromDB() {
   }
 }
 
-export { isRegisteredUser, addUser };
+export { isRegisteredUser, addUser, getUserName };
 export { writeItemToDB, loadCartFromDB };
