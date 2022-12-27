@@ -16,6 +16,12 @@ function Login() {
   const [user, loading, error] = useAuthState(auth);
   const [register, setRegister] = useState(false);
 
+  const clearInputs = () => {
+    setEmail("");
+    setPassword("");
+    setName("");
+  };
+
   if (error) {
     return <div className="login-error">Error: {error}</div>;
   }
@@ -28,7 +34,13 @@ function Login() {
         {user.displayName}
         <img src={user.photoURL} alt="profile" />
         <div className="menu">
-          <button className="login-logout small" onClick={logout}>
+          <button
+            className="login-logout small"
+            onClick={() => {
+              logout();
+              setRegister(false);
+            }}
+          >
             log out
           </button>
         </div>
@@ -40,7 +52,18 @@ function Login() {
       <>
         <div className="shade" />
         <div className="login">
-          <div className="small">Give us your personal information!</div>
+          <p className="small">
+            Already have an account?
+            <button
+              className="login-password-reset small"
+              onClick={() => {
+                setRegister(false);
+                clearInputs();
+              }}
+            >
+              log in
+            </button>
+          </p>
           <input
             type="text"
             className="login-input small"
@@ -71,8 +94,10 @@ function Login() {
           <button
             className="login-register small"
             onClick={() => {
-              if (password.length >= 6)
-                registerWithEmailAndPassword(email, password);
+              if (password.length >= 6) {
+                registerWithEmailAndPassword(name, email, password);
+                clearInputs();
+              }
             }}
           >
             Register
@@ -90,10 +115,8 @@ function Login() {
           <button
             className="login-register small"
             onClick={() => {
-              // setRegister(true)
-              alert(
-                "register is currently not working, please sign in with a google account"
-              );
+              setRegister(true);
+              clearInputs();
             }}
           >
             Register
@@ -123,7 +146,10 @@ function Login() {
         <p className="small">
           <button
             className="login-login small"
-            onClick={() => logInWithEmailAndPassword(email, password)}
+            onClick={async () => {
+              await logInWithEmailAndPassword(email, password);
+              clearInputs();
+            }}
           >
             Log In
           </button>

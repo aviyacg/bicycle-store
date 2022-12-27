@@ -18,7 +18,6 @@ async function googleSignIn() {
   try {
     const result = await signInWithPopup(auth, googleProvider);
     const user = result.user;
-    console.log({ ...user });
     // add new users to the users collection
     !(await isRegisteredUser(user.uid)) && (await addUser(user, "google"));
   } catch (error) {
@@ -38,6 +37,7 @@ async function registerWithEmailAndPassword(name, email, password) {
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     const user = result.user;
+    user.displayName = name;
     await addUser(user, "local");
   } catch (error) {
     console.log("registerWithEmailAndPassword error: ", error);
