@@ -156,7 +156,13 @@ function Login() {
           Forgot your password?
           <button
             className="login-password-reset small"
-            onClick={() => sendPasswordReset(email)}
+            onClick={async () => {
+              try {
+                await sendPasswordReset(email);
+              } catch (error) {
+                alert(error);
+              }
+            }}
           >
             click here
           </button>

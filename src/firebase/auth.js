@@ -47,9 +47,10 @@ async function registerWithEmailAndPassword(name, email, password) {
 async function sendPasswordReset(email) {
   try {
     await sendPasswordResetEmail(auth, email);
-    alert("Password reset link sent!");
+    alert("Password reset link sent to " + email);
   } catch (error) {
-    console.log("sendPasswordReset error: ", error);
+    console.log("sendPasswordReset error: ", { error });
+    return Promise.reject(error.code.replace("auth/", "").replaceAll("-", " "));
   }
 }
 
