@@ -30,6 +30,7 @@ async function addUser(user, provider) {
 }
 
 async function getUserName(uid) {
+  if (!uid) return "";
   const q = query(collection(db, "users"), where("uid", "==", uid));
   const docs = await getDocs(q);
   return docs.docs[0]?.get("name");
