@@ -30,6 +30,7 @@ async function logInWithEmailAndPassword(email, password) {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
     console.log("logInWithEmailAndPassword error: ", error);
+    return Promise.reject(error.code.replace("auth/", "").replaceAll("-", " "));
   }
 }
 
@@ -41,6 +42,7 @@ async function registerWithEmailAndPassword(name, email, password) {
     await addUser(user, "local");
   } catch (error) {
     console.log("registerWithEmailAndPassword error: ", error);
+    return Promise.reject(error.code.replace("auth/", "").replaceAll("-", " "));
   }
 }
 

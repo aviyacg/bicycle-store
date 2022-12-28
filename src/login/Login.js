@@ -12,14 +12,46 @@ import "./Login.css";
 import { getUserName } from "../firebase/firestore";
 import avatar from "./avatar.png";
 function Login() {
+  // input values
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+
+  // input validation effect
+  useEffect(() => {
+    // vaidate email
+    if (
+      email.length > 0 &&
+      (email.length < 4 ||
+        !email.includes("@") ||
+        !email.includes(".") ||
+        email.endsWith("."))
+    ) {
+      return setError("invalid email");
+    }
+    // validate password
+    if (password.length > 0 && password.length < 6) {
+      return setError("password is too short");
+    }
+    // clear error if both inputs are valid
+    else {
+      setError("");
+    }
+  }, [email, password]);
+
+  // switch between the login and register views
   const [register, setRegister] = useState(false);
+
+  // user info
+  // current user from auth
+  const [user, loading] = useAuthState(auth);
+  const [error, setError] = useState("");
+  // username from the user doc in firestore
   const [username, setUsername] = useState("");
 
+  // sync username with current user
   useEffect(() => {
+    if (!user) setUsername("");
     getUserName(user?.uid).then((res) => setUsername(res));
   }, [user]);
 
@@ -29,9 +61,7 @@ function Login() {
     setName("");
   };
 
-  if (error) {
-    return <div className="login-error">Error: {error}</div>;
-  }
+  // views
   if (loading) {
     return <div className="login-loading">Loading</div>;
   }
@@ -98,12 +128,19 @@ function Login() {
               setPassword(e.target.value);
             }}
           />
+          {error !== "" ? (
+            <div className="login-error small">{error}</div>
+          ) : undefined}
           <button
             className="login-register small"
-            onClick={() => {
-              if (password.length >= 6) {
-                registerWithEmailAndPassword(name, email, password);
+            onClick={async () => {
+              if (email.length === 0) return setError("enter your email");
+              if (password.length === 0) return setError("enter your password");
+              try {
+                await registerWithEmailAndPassword(name, email, password);
                 clearInputs();
+              } catch (error) {
+                setError(error);
               }
             }}
           >
@@ -150,12 +187,21 @@ function Login() {
             setPassword(e.target.value);
           }}
         />
+        {error !== "" ? (
+          <div className="login-error small">{error}</div>
+        ) : undefined}
         <p className="small">
           <button
             className="login-login small"
             onClick={async () => {
-              await logInWithEmailAndPassword(email, password);
-              clearInputs();
+              if (email.length === 0) return setError("enter your email");
+              if (password.length === 0) return setError("enter your password");
+              try {
+                await logInWithEmailAndPassword(email, password);
+                clearInputs();
+              } catch (error) {
+                setError(error);
+              }
             }}
           >
             Log In
@@ -167,7 +213,7 @@ function Login() {
               try {
                 await sendPasswordReset(email);
               } catch (error) {
-                alert(error);
+                setError(error);
               }
             }}
           >

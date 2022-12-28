@@ -113,3 +113,13 @@
 .login-user .menu button {
   width: 100%;
 }
+
+.login-error {
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  background-color: hsl(0, 100%, 50%, 0.2);
+  border: 1px solid hsl(0, 100%, 50%, 0.4);
+  border-radius: 4px;
+  color: red;
+}
