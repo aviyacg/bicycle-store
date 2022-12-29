@@ -1,9 +1,10 @@
 import "./App.css";
+
 import Header from "./header/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home/Home";
 import Shop from "./shop/Shop";
 import Cart from "./cart/Cart";
+import Login from "./login/Login";
 
 import blueBike from "./assets/images/blue-bike.jpg";
 import redBike from "./assets/images/red-bike.jpg";
@@ -12,9 +13,27 @@ import purpleBike from "./assets/images/purple-bike.jpg";
 import orangeBike from "./assets/images/orange-bike.jpg";
 import turquoiseBike from "./assets/images/turquoise-bike.jpg";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  addItemToCart,
+  getCart,
+  removeItemFromCart,
+} from "./firebase/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase/auth";
 
 function App() {
   const [cart, setCart] = useState({});
+  const [user] = useAuthState(auth);
+
+  // load cart from DB
+  const loadDBcart = async () => {
+    const dbCart = await getCart();
+    setCart(dbCart);
+  };
+  useEffect(() => {
+    loadDBcart();
+  }, [user]);
 
   const [itemCount, setItemCount] = useState(0);
 
@@ -40,6 +59,7 @@ function App() {
         ...cart,
       });
     }
+    addItemToCart(item);
   };
 
   const removeItem = (item) => {
@@ -50,11 +70,11 @@ function App() {
         setCart({ [item.name]: prevItem, ...cart });
       } else {
         const prevCart = cart;
-        console.log({ prevCart });
         delete prevCart[item.name];
         setCart({ ...prevCart });
       }
     }
+    removeItemFromCart(item);
   };
 
   const itemList = [
@@ -106,6 +126,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+        <Login />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
